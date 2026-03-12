@@ -24,6 +24,10 @@ app.use('/partner/shipment/docs',
     })
 );
 
+app.use('/', (req, res) => {
+    res.status(200).json({ message: 'Welcome to the Partner API!' });
+})
+
 app.use('/partner', require('./controllers/partner/routes'))
 
 if (require.main === module) {

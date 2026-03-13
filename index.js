@@ -12,6 +12,10 @@ app.use('/partner/shipment/docs', swaggerUi.serve);
 
 app.use('/partner', require('./controllers/partner/routes'))
 
+app.get('/', (req, res) => {
+    res.send('Welcome to the API!');
+});
+
 if (require.main === module) {
     const port = process.env.PORT || 3000;
     app.listen(port, () => {
